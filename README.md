@@ -19,6 +19,7 @@
 1.封装ElasticSearchClient原生方法，入参和出参均为ElasticSearchClient原生包的类，提供对外服务方法ElasticsearchService，内部集成日志输入和输出；
 
 2.考虑到项目开发并不需要很复杂的操作，对外也提供Elasticsearch简单操作服务ElasticsearchSimpleService，对ElasticsearchService方法进行封装；
+![](https://reborn1.oss-cn-hangzhou.aliyuncs.com/md/202303252040569.png)
 
 ## 3  单元测试报告
 
