@@ -1,4 +1,6 @@
 # spring-boot-starter-elasticsearch说明文档
+[![](https://jitpack.io/v/ooo176/spring-boot-starter-elasticsearch.svg)](https://jitpack.io/#ooo176/spring-boot-starter-elasticsearch)
+
 
 ## 1 客户端开发思路
 
@@ -31,12 +33,25 @@ ElasticsearchService方法都已通过单元测试，单元测试用例基于jun
 
 说明：目前service和simpleService部分方法未开发完全，有需要请提issue
 
+#### 4.1.1 添加JitPack repository
+
+```
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+
+#### 4.1.2 添加依赖
+
 ```
 <dependency>
-  <groupId>ooo.github.io</groupId>
-  <artifactId>spring-boot-starter-elasticsearch</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
-</dependency>
+	    <groupId>com.github.ooo176</groupId>
+	    <artifactId>spring-boot-starter-elasticsearch</artifactId>
+	    <version>1.0</version>
+	</dependency>
 ```
 
 ### 4.2 新增配置
