@@ -1,0 +1,44 @@
+{
+  "properties": [
+    {
+      "name": "elasticsearch.host",
+      "type": "java.lang.String",
+      "description": "Description for elasticsearch.host."
+    },
+    {
+      "name": "elasticsearch.username",
+      "type": "java.lang.String",
+      "description": "Description for elasticsearch.username."
+    },
+    {
+      "name": "elasticsearch.port",
+      "type": "java.lang.Integer",
+      "description": "Description for elasticsearch.port."
+    },
+    {
+      "name": "elasticsearch.password",
+      "type": "java.lang.String",
+      "description": "Description for elasticsearch.password."
+    },
+    {
+      "name": "elasticsearch.socketTimeout",
+      "type": "java.lang.Integer",
+      "description": "Description for elasticsearch.socketTimeout."
+    },
+    {
+      "name": "elasticsearch.connectTimeout",
+      "type": "java.lang.Integer",
+      "description": "Description for elasticsearch.socketTimeout."
+    },
+    {
+      "name": "elasticsearch.index.maxResultWindow",
+      "type": "java.lang.Integer",
+      "description": "Description for elasticsearch.index.maxResultWindow."
+    },
+    {
+      "name": "elasticsearch.index.numberOfShards",
+      "type": "java.lang.String",
+      "description": "Description for elasticsearch.index.maxResultWindow."
+    }
+  ]
+}
