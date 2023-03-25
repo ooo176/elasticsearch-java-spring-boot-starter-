@@ -9,10 +9,6 @@
 
     <modelVersion>4.0.0</modelVersion>
     <properties>
-        <!--项目permission所有依赖版本-->
-        <permission-lib.version>3.1.4</permission-lib.version>
-
-        <!--log4j最新版本，修改log4j漏洞，验证分保-->
         <log4j.version>2.17.2</log4j.version>
         <elasticsearch.version>5.6.10</elasticsearch.version>
         <java.version>1.8</java.version>

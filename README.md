@@ -41,13 +41,14 @@ ElasticsearchService方法都已通过单元测试，单元测试用例基于jun
 
 ### 4.2 新增配置
 
-starter会根据是否存在elasticsearch.host参数来决定会不会生效
+starter会根据是否存在elasticsearch.version是否等于7.17.7参数来决定会不会生效
 
 ```
 elasticsearch:
   cluster_name: ESCluster1
   host: localhost
   port: 9200
+  version: 7.17.7
   
 management:
   health:
@@ -77,6 +78,7 @@ private ElasticsearchService esService;
 
 | 参数                                | 参数默认值 | 说明                                            | 举例      |
 | ----------------------------------- | ---------- | ----------------------------------------------- | --------- |
+| elasticsearch.version                  |            | 根据参数决定使用elasticsearch的版本号，只支持7.17.7                       | 7.17.7 |
 | elasticsearch.host                  |            | elasticsearch的master地址                       | 127.0.0.1 |
 | elasticsearch.port                  | 9200       | elasticsearch的http端口                         | 9200      |
 | elasticsearch.username              |            | elasticsearch需要认证的用户名，不配置默认不存在 | elastic   |
