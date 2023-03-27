@@ -118,7 +118,9 @@ idea添加
 
 ![](https://reborn1.oss-cn-hangzhou.aliyuncs.com/md/202303272119739.png)
 
-![image-20230327212018743](C:\Users\kaiqin\AppData\Roaming\Typora\typora-user-images\image-20230327212018743.png)
+VM options的参数如下：
+
+![](https://reborn1.oss-cn-hangzhou.aliyuncs.com/md/202303272130583.png)
 
 
 
