@@ -9,40 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 高亮替换工具类
- * <p>
- * 例如：
- * 原始出参：{
- * "_index": "enterprise_archive_dev",
- * "_type": "_doc",
- * "_id": "51f9a00fca839f42a67f9bbfd4c93371",
- * "_score": 1,
- * "_source": {
- * "qyid": "51f9a00fca839f42a67f9bbfd4c93371",
- * "dwxxmc": "重庆市开州区渝巫加油站",
- * },
- * "highlight": {
- * "dwxxmc": [
- * "<em>重庆市开州区渝巫加油站</em>"
- * ]
- * }}
- * <p>
- * 替换之后的出参：（会使用preTags和postTags替换），方便前端直接渲染页面
- * {
- * "_index": "enterprise_archive_dev",
- * "_type": "_doc",
- * "_id": "51f9a00fca839f42a67f9bbfd4c93371",
- * "_score": 1,
- * "_source": {
- * "qyid": "51f9a00fca839f42a67f9bbfd4c93371",
- * "dwxxmc": "<span style=\"color:red;font-weight:bold;\">巫山县林家沟加油站</span>",
- * },
- * "highlight": {
- * "dwxxmc": [
- * "<em>重庆市开州区渝巫加油站</em>"
- * ]
- * }}
- *
  * @author kaiqin
  */
 @Slf4j

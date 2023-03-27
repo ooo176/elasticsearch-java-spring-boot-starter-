@@ -1,8 +1,17 @@
 # spring-boot-starter-elasticsearch说明文档
 [![](https://jitpack.io/v/ooo176/spring-boot-starter-elasticsearch.svg)](https://jitpack.io/#ooo176/spring-boot-starter-elasticsearch)
 
+## 1.依赖版本
 
-## 1 客户端开发思路
+| 组件       | 版本          |
+| ---------- | ------------- |
+| springboot | 2.3.6.RELEASE |
+| druid      | 1.2.3         |
+| java       | 1.8           |
+
+
+
+## 2 客户端开发思路
 
 开发spring-boot-starter-elasticsearch
 
@@ -16,24 +25,24 @@
 
 4.统一日志管理，每次查询请求将入参输出，便于开发和测试人员调试输出结果；
 
-## 2 UML图
+## 3 UML图
 
 1.封装ElasticSearchClient原生方法，入参和出参均为ElasticSearchClient原生包的类，提供对外服务方法ElasticsearchService，内部集成日志输入和输出；
 
 2.考虑到项目开发并不需要很复杂的操作，对外也提供Elasticsearch简单操作服务ElasticsearchSimpleService，对ElasticsearchService方法进行封装；
 ![](https://reborn1.oss-cn-hangzhou.aliyuncs.com/md/202303252040569.png)
 
-## 3  单元测试报告
+## 4  单元测试报告
 
 ElasticsearchService方法都已通过单元测试，单元测试用例基于junit开发
 
-## 4 使用说明
+## 5 使用说明
 
-### 4.1 引入依赖
+### 5.1 引入依赖
 
 说明：目前service和simpleService部分方法未开发完全，有需要请提issue
 
-#### 4.1.1 添加JitPack repository
+#### 5.1.1 添加JitPack repository
 
 ```
 <repositories>
@@ -44,7 +53,7 @@ ElasticsearchService方法都已通过单元测试，单元测试用例基于jun
 	</repositories>
 ```
 
-#### 4.1.2 添加依赖
+#### 5.1.2 添加依赖
 
 ```
 <dependency>
@@ -54,7 +63,7 @@ ElasticsearchService方法都已通过单元测试，单元测试用例基于jun
 	</dependency>
 ```
 
-### 4.2 新增配置
+### 5.2 新增配置
 
 starter会根据是否存在elasticsearch.version是否等于7.17.7参数来决定会不会生效
 
@@ -71,7 +80,7 @@ management:
       enabled: false
 ```
 
-### 4.3 使用服务类
+### 5.3 使用服务类
 
 直接在需要的类里面，引入ElasticsearchSimpleService或者ElasticsearchService，调用对应的方法就行
 
@@ -89,7 +98,7 @@ private ElasticsearchService esService;
 
 
 
-### 4.4 相关参数说明
+### 5.4 相关参数说明
 
 | 参数                                | 参数默认值 | 说明                                            | 举例      |
 | ----------------------------------- | ---------- | ----------------------------------------------- | --------- |
@@ -103,17 +112,19 @@ private ElasticsearchService esService;
 | elasticsearch.index.numberOfShards  | 1          | elasticsearch创建索引时的分片                   | 3         |
 | elasticsearch.index.maxResultWindow | 1000000    | elasticsearch创建索引时的深度分页查询参数       | 1000000   |
 
+### 5.5 Junit自测使用
+
+idea添加
+
+![](https://reborn1.oss-cn-hangzhou.aliyuncs.com/md/202303272119739.png)
+
+![image-20230327212018743](C:\Users\kaiqin\AppData\Roaming\Typora\typora-user-images\image-20230327212018743.png)
 
 
 
+## 6.遇到的问题
 
-
-
-
-
-## 5.遇到的问题
-
-### 5.1.JsonParser不存在
+### 6.1.JsonParser不存在
 
 ![](https://reborn1.oss-cn-hangzhou.aliyuncs.com/md/202211231542952.png)
 
@@ -131,7 +142,7 @@ pom新增
 
 参考： https://github.com/elastic/elasticsearch-java/issues/79
 
-### 5.2.与springboot定义的es版本不一致
+### 6.2.与springboot定义的es版本不一致
 
 现象：
 
@@ -155,7 +166,7 @@ pom新增
         </dependency>
 ```
 
-### 5.3.Missing required property 
+### 6.3.Missing required property 
 
 ![](https://reborn1.oss-cn-hangzhou.aliyuncs.com/md/202211241720786.png)
 
@@ -163,7 +174,7 @@ pom新增
 
 参考：https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/missing-required-property.html
 
-### 5.4.创建索引后，eshead出现Unassigned节点
+### 6.4.创建索引后，eshead出现Unassigned节点
 
 解决办法：创建索引时，调整副本数
 

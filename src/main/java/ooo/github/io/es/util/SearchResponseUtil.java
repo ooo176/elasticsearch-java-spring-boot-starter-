@@ -10,9 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author fengwang26
- * @date 2022/12/6 15:14
- * @describe
+ * @author kaiqin
  */
 @Data
 public class SearchResponseUtil {

@@ -31,13 +31,15 @@ import java.util.Objects;
 @SpringBootTest(classes = {ElasticsearchAutoConfiguration.class})
 public class Test {
 
+    private static final String INDEX_NAME = "demo20230327";
+
     @Autowired
     private ElasticsearchService elasticsearchService;
 
     @Before
     public void createIndexIfNotExist() {
         //exist index
-        ExistsRequest existsRequest = new ExistsRequest.Builder().index("aaa").build();
+        ExistsRequest existsRequest = new ExistsRequest.Builder().index(INDEX_NAME).build();
         BooleanResponse response = elasticsearchService.existIndex(existsRequest);
         if (Objects.equals(response.value(), Boolean.TRUE)) {
             return;
@@ -50,7 +52,7 @@ public class Test {
         IndexSettings indexSettings = new IndexSettings.Builder()
                 .maxResultWindow(1000000).numberOfReplicas("0").build();
         CreateIndexRequest createIndexRequest = new CreateIndexRequest.Builder()
-                .index("aaa").settings(indexSettings).mappings(typeMapping).build();
+                .index(INDEX_NAME).settings(indexSettings).mappings(typeMapping).build();
         CreateIndexResponse createIndexResponse = elasticsearchService.createIndex(createIndexRequest);
         Assert.assertEquals(createIndexResponse.acknowledged(), Boolean.TRUE);
 
@@ -59,7 +61,7 @@ public class Test {
 
     @org.junit.Test
     public void existIndex() {
-        ExistsRequest existsRequest = new ExistsRequest.Builder().index("aaa").build();
+        ExistsRequest existsRequest = new ExistsRequest.Builder().index(INDEX_NAME).build();
         BooleanResponse response = elasticsearchService.existIndex(existsRequest);
         Assert.assertNotNull(response);
     }
