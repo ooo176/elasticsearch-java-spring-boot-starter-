@@ -3,7 +3,7 @@
 
 ## 1.依赖版本
 
-| 组件       | 版本          |
+| 组件         | 版本            |
 | ---------- | ------------- |
 | springboot | 2.3.6.RELEASE |
 | druid      | 1.2.3         |
@@ -45,12 +45,16 @@ ElasticsearchService方法都已通过单元测试，单元测试用例基于jun
 #### 5.1.1 添加JitPack repository
 
 ```
-<repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 ```
 
 #### 5.1.2 添加依赖
@@ -100,17 +104,17 @@ private ElasticsearchService esService;
 
 ### 5.4 相关参数说明
 
-| 参数                                | 参数默认值 | 说明                                            | 举例      |
-| ----------------------------------- | ---------- | ----------------------------------------------- | --------- |
-| elasticsearch.version                  |            | 根据参数决定使用elasticsearch的版本号，只支持7.17.7                       | 7.17.7 |
-| elasticsearch.host                  |            | elasticsearch的master地址                       | 127.0.0.1 |
-| elasticsearch.port                  | 9200       | elasticsearch的http端口                         | 9200      |
-| elasticsearch.username              |            | elasticsearch需要认证的用户名，不配置默认不存在 | elastic   |
-| elasticsearch.password              |            | elasticsearch需要认证的密码，不配置默认不存在   | 123456    |
-| elasticsearch.connectTimeout        | 5000       | elasticsearch连接时设置的连接超时时间           | 5000      |
-| elasticsearch.socketTimeout         | 60000      | elasticsearch连接时设置的socket超时时间         | 60000     |
-| elasticsearch.index.numberOfShards  | 1          | elasticsearch创建索引时的分片                   | 3         |
-| elasticsearch.index.maxResultWindow | 1000000    | elasticsearch创建索引时的深度分页查询参数       | 1000000   |
+| 参数                                  | 参数默认值   | 说明                                  | 举例        |
+| ----------------------------------- | ------- | ----------------------------------- | --------- |
+| elasticsearch.version               |         | 根据参数决定使用elasticsearch的版本号，只支持7.17.7 | 7.17.7    |
+| elasticsearch.host                  |         | elasticsearch的master地址              | 127.0.0.1 |
+| elasticsearch.port                  | 9200    | elasticsearch的http端口                | 9200      |
+| elasticsearch.username              |         | elasticsearch需要认证的用户名，不配置默认不存在      | elastic   |
+| elasticsearch.password              |         | elasticsearch需要认证的密码，不配置默认不存在       | 123456    |
+| elasticsearch.connectTimeout        | 5000    | elasticsearch连接时设置的连接超时时间           | 5000      |
+| elasticsearch.socketTimeout         | 60000   | elasticsearch连接时设置的socket超时时间       | 60000     |
+| elasticsearch.index.numberOfShards  | 1       | elasticsearch创建索引时的分片               | 3         |
+| elasticsearch.index.maxResultWindow | 1000000 | elasticsearch创建索引时的深度分页查询参数         | 1000000   |
 
 ### 5.5 Junit自测使用
 
